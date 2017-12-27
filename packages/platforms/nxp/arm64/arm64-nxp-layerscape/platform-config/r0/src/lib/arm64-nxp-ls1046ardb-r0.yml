@@ -11,7 +11,7 @@ arm64-nxp-ls1046ardb-r0:
     kernel:
       <<: *arm64-kernel
     dtb:
-      =: fsl-ls1046a-rdb.dtb
+      =: fsl-ls1046a-rdb-sdk.dtb
       <<: *arm64-kernel-package
     itb:
       <<: *arm64-itb
@@ -23,10 +23,10 @@ arm64-nxp-ls1046ardb-r0:
     nos_bootcmds: *mmc_bootcmds
 
     environment:
-    - device: /dev/mtd-uboot-env
+    - device: /dev/mtd3
       env_offset: 0x00000000
       env_size: 0x00020000
-      sector_size: 0x00020000
+      sector_size: 0x00040000
 
   installer:
   - ONL-BOOT:

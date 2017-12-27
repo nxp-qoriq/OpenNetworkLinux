@@ -17,7 +17,7 @@ arm64-nxp-ls2088ardb-r0:
       <<: *arm64-itb
 
   loader:
-    device: /dev/mmcblk0
+    device: /dev/sda
     ##partition: /dev/sda1
     loadaddr: 0xa0000000
     nos_bootcmds: *usb_bootcmds
@@ -25,7 +25,7 @@ arm64-nxp-ls2088ardb-r0:
     environment:
     - device: /dev/mtd2
       env_offset: 0x00000000
-      env_size: 0x0002000
+      env_size: 0x00020000
       sector_size: 0x00020000
 
   installer:
